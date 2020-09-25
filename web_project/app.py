@@ -12,6 +12,7 @@ import time
 # import cx_Oracle
 # import numpy
 import requests
+import random
 
 
 def create_soup(url):
@@ -58,6 +59,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
+    time.sleep(random(1,120))
     return render_template('index.html',
     naver_title1 = naverPolitics_news(1)[0],
     naver_src1 = naverPolitics_news(1)[1],
