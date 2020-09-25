@@ -59,7 +59,6 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-    time.sleep(random(1,120))
     return render_template('index.html',
     naver_title1 = naverPolitics_news(1)[0],
     naver_src1 = naverPolitics_news(1)[1],
@@ -86,6 +85,7 @@ def index():
     naver_img5 = naverOther_news()[2][3],
     naver_desc5 = naverOther_news()[3][3]
     )
+    time.sleep(random.randrange(1,120))
 
 if __name__ == '__main__':
     #아마존 실행용
